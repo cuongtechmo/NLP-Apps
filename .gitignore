@@ -1,0 +1,13 @@
+# Môi trường ảo
+.venv/
+venv/
+
+# Các tệp dữ liệu / ma trận / mô hình nặng
+*.npz
+*.joblib
+*.pkl
+*.bin
+*.h5
+
+# PyCharm configuration
+.idea/
