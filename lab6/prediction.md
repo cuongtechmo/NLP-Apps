@@ -1,0 +1,5 @@
+* **Prediction 1:** Nếu một key có dot product lớn hơn các key khác, attention weight của nó sẽ lớn hơn rõ rệt do đặc tính khuếch đại của hàm mũ $\exp(\cdot)$ trong Softmax.
+* **Prediction 2:** Nếu tất cả scores giống nhau $s = [1, 1, 1, 1]$, attention weights sẽ phân bố đồng đều: $\alpha_i = \frac{1}{4} = 0.25$ (25% cho mỗi token).
+* **Prediction 3:** Nếu có một score lớn vượt trội $s = [1, 1, 10]$, attention weight sẽ tập trung gần như toàn bộ ($\approx 99.99\%$) vào token thứ ba.
+* **Prediction 4:** Khi độ dài câu tăng từ $10 \rightarrow 1000$ tokens, chi phí tính toán attention matrix $QK^T$ tăng theo bình phương $O(T^2)$ — từ $10^2 = 100$ phép nhân lên $1000^2 = 1,000,000$ phép nhân (tăng 10,000 lần).
+* **Prediction 5:** Attention không luôn chọn đúng token quan trọng theo đánh giá của con người. Mô hình phân bổ trọng số dựa trên việc tối ưu hóa loss function (ngữ cảnh cú pháp, từ dừng, từ kết nối), không hẳn phản ánh tư duy logic hoặc ngữ nghĩa của con người.
